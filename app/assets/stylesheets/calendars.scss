@@ -9,7 +9,7 @@ body {font-family: Verdana, sans-serif;}
 .month {
     padding: 70px 25px;
     width: 100vw;
-    background: #1abc9c;
+    background: #4477aa;
 }
 
 /* Month list */
@@ -67,8 +67,17 @@ body {font-family: Verdana, sans-serif;}
   color:#777;
 }
 
+.day:hover {
+  background-color: #ddf;
+  cursor: pointer;
+}
+
 .empty-day {
  background:#ccc;
+}
+
+.empty-day:hover {
+  cursor: default;
 }
 
 .days {

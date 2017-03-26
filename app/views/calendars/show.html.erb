@@ -20,11 +20,46 @@
 </div>
 
 <div class="days">
+
+  <!-- Pad unused days before first of month -->
   <% @prior_days.times do |day| %>
-  <div class="day empty-day">
-  </div>
-<% end %>
-    <div class="day">1</div>
+    <div class="day empty-day">
+    </div>
+  <% end %>
+
+  <!-- Dynamically generate days of month -->
+  <% date = 1 %>
+  <% @days_in_month.times do |day| %>
+
+    <% date_obj = DateTime.new(@basis.year, @basis.month, date) %>
+
+    <div class="day">
+
+      <div class="day-date">
+        <%= date %>
+      </div>
+
+      <div class="day-events">
+        <!-- Show any events for that day -->
+        <% if Event.where('start_time BETWEEN ? AND ?', date_obj.beginning_of_day, date_obj.end_of_day).any? %>
+          <% Event.where('start_time BETWEEN ? AND ?', date_obj.beginning_of_day, date_obj.end_of_day).each do |event| %>
+            <%= event.name %>
+          <% end %>
+        <% end %>
+      </div>
+
+    </div>
+
+    <% date += 1 %>
+  <% end %>
+
+  <!-- Pad unused days after last of month -->
+  <% @following_days.times do |day| %>
+    <div class="day empty-day">
+    </div>
+  <% end %>
+
+<!--     <div class="day">1</div>
     <div class="day active"><span class="active">10</span></div>
     <div class="day">11</div>
     <div class="day">12</div>
@@ -50,5 +85,5 @@
     <div class="day">x</div>
     <div class="day">x</div>
     <div class="day">x</div>
-    <div class="day">x</div>
+    <div class="day">x</div> -->
 </div>

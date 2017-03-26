@@ -21,3 +21,11 @@ event0 = Event.create(
   start_time: DateTime.strptime("01/04/2017 18:00", "%d/%m/%Y %H:%M"),
   end_time: DateTime.strptime("01/04/2017 19:00", "%d/%m/%Y %H:%M")
   )
+
+event1 = Event.create(
+  calendar_id: calendar0.id,
+  name: "Dinner with Amanda",
+  description: "Meet Amanda at Qdoba on 6th avenue. Will talk development.",
+  start_time: DateTime.strptime("29/03/2017 18:00", "%d/%m/%Y %H:%M"),
+  end_time: DateTime.strptime("29/03/2017 19:00", "%d/%m/%Y %H:%M")
+  )

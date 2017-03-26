@@ -6,9 +6,9 @@ class CalendarsController < ApplicationController
   def show(basis=Date.new(Date.today.year, Date.today.month, 1))
     @basis = basis
     @first_wday = basis.wday
-    @prior_days = 7 - @first_wday
+    @prior_days = @first_wday - 1
     @days_in_month = days_in_month(basis.month, basis.year)
-    # @following_days = 7 - @prior_days + days_in_month(basis.month, basis.year)
+    @following_days = 7 - ((@prior_days + @days_in_month) % 7 )
   end
 
   private
