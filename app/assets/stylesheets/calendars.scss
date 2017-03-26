@@ -8,7 +8,7 @@ body {font-family: Verdana, sans-serif;}
 /* Month header */
 .month {
     padding: 70px 25px;
-    width: 100%;
+    width: 100vw;
     background: #1abc9c;
 }
 
@@ -38,10 +38,11 @@ body {font-family: Verdana, sans-serif;}
 }
 
 /* Weekdays (Mon-Sun) */
-.weekdays {
-    margin: 0;
-    padding: 10px 0;
-    background-color:#ddd;
+.weekday {
+  text-align: left;
+  flex: 0 1 calc(14%);
+  height: 20px;
+  width: 14%;
 }
 
 .weekdays li {
@@ -52,24 +53,35 @@ body {font-family: Verdana, sans-serif;}
 }
 
 /* Days (1-31) */
+
+.day {
+  list-style-type: none;
+  display: inline-block;
+
+  flex: 0 1 calc(14%);
+  height: 100px;
+  width: 13.6%;
+  text-align: left;
+  margin-bottom: 5px;
+  font-size:12px;
+  color:#777;
+}
+
+.empty-day {
+ background:#ccc;
+}
+
 .days {
+    display: flex;
+    flex-wrap: wrap;
+    flex-flow: row-wrap;
     padding: 10px 0;
     background: #eee;
     margin: 0;
 }
 
-.days li {
-    list-style-type: none;
-    display: inline-block;
-    width: 13.6%;
-    text-align: center;
-    margin-bottom: 5px;
-    font-size:12px;
-    color:#777;
-}
-
 /* Highlight the "current" day */
-.days li .active {
+.active {
     padding: 5px;
     background: #1abc9c;
     color: white !important

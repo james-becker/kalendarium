@@ -5,3 +5,19 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+user0 = User.create(name: "James")
+
+calendar0 = Calendar.create(
+  user_id: user0.id,
+  name: "Appointments",
+  description: "Upcoming events related to school and work"
+  )
+
+event0 = Event.create(
+  calendar_id: calendar0.id,
+  name: "Dinner with Ian",
+  description: "Meet Ian at Qdoba on 6th avenue. Will talk development.",
+  start_time: DateTime.strptime("01/04/2017 18:00", "%d/%m/%Y %H:%M"),
+  end_time: DateTime.strptime("01/04/2017 19:00", "%d/%m/%Y %H:%M")
+  )

@@ -1,0 +1,54 @@
+<div class="month">
+  <ul>
+    <li class="prev">&#10094;</li>
+    <li class="next">&#10095;</li>
+    <li>
+      <%= @basis.strftime('%B') %><br>
+      <span style="font-size:18px"><%= @basis.strftime('%Y') %></span>
+    </li>
+  </ul>
+</div>
+
+<div class="days">
+  <div class="weekday">Mon</div>
+  <div class="weekday">Tues</div>
+  <div class="weekday">Wed</div>
+  <div class="weekday">Thurs</div>
+  <div class="weekday">Fri</div>
+  <div class="weekday">Sat</div>
+  <div class="weekday">Sun</div>
+</div>
+
+<div class="days">
+  <% @prior_days.times do |day| %>
+  <div class="day empty-day">
+  </div>
+<% end %>
+    <div class="day">1</div>
+    <div class="day active"><span class="active">10</span></div>
+    <div class="day">11</div>
+    <div class="day">12</div>
+    <div class="day">13</div>
+    <div class="day">14</div>
+    <div class="day">15</div>
+    <div class="day">16</div>
+    <div class="day">17</div>
+    <div class="day">18</div>
+    <div class="day">19</div>
+    <div class="day">20</div>
+    <div class="day">21</div>
+    <div class="day">22</div>
+    <div class="day">23</div>
+    <div class="day">24</div>
+    <div class="day">25</div>
+    <div class="day">26</div>
+    <div class="day">27</div>
+    <div class="day">28</div>
+    <div class="day">29</div>
+    <div class="day">30</div>
+    <div class="day">x</div>
+    <div class="day">x</div>
+    <div class="day">x</div>
+    <div class="day">x</div>
+    <div class="day">x</div>
+</div>
