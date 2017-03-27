@@ -1,13 +1,22 @@
 <div class="month">
   <ul>
-    <li class="prev">&#10094;</li>
-    <li class="next">&#10095;</li>
+    <%= link_to calendar_path(@basis - 1.month) do %>
+      <li class="prev">&#10094;</li>
+    <% end %>
+    <%= link_to calendar_path(@basis + 1.month) do %>
+      <li class="next">&#10095;</li>
+    <% end %>
     <li>
-      <%= @basis.strftime('%B') %><br>
+      <h1><%= @basis.strftime('%B').downcase.capitalize %></h1>
+      <br>
       <span style="font-size:18px"><%= @basis.strftime('%Y') %></span>
     </li>
   </ul>
 </div>
+
+
+
+
 
 <div class="days">
   <div class="weekday">Mon</div>
@@ -17,7 +26,34 @@
   <div class="weekday">Fri</div>
   <div class="weekday">Sat</div>
   <div class="weekday">Sun</div>
+
+  <button id="btn-add-event" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+    Quick Add
+  </button>
+
 </div>
+
+<!-- Add Event Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="exampleModalLabel">Quick Add</h2>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <%= render 'events/new' %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Add to Calendar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 
 <div class="days">
 
@@ -35,15 +71,21 @@
 
     <div class="day">
 
-      <div class="day-date">
-        <%= date %>
-      </div>
+      <% if date_obj == Date.today %>
+        <div class="day-date active">
+          <%= date %>
+        </div>
+      <% else %>
+        <div class="day-date">
+          <%= date %>
+        </div>
+      <% end %>
 
       <div class="day-events">
         <!-- Show any events for that day -->
         <% if Event.where('start_time BETWEEN ? AND ?', date_obj.beginning_of_day, date_obj.end_of_day).any? %>
           <% Event.where('start_time BETWEEN ? AND ?', date_obj.beginning_of_day, date_obj.end_of_day).each do |event| %>
-            <%= event.name %>
+            • <%= event.name %> at <%= event.start_time.strftime("%H:%M") %>
           <% end %>
         <% end %>
       </div>
@@ -59,31 +101,4 @@
     </div>
   <% end %>
 
-<!--     <div class="day">1</div>
-    <div class="day active"><span class="active">10</span></div>
-    <div class="day">11</div>
-    <div class="day">12</div>
-    <div class="day">13</div>
-    <div class="day">14</div>
-    <div class="day">15</div>
-    <div class="day">16</div>
-    <div class="day">17</div>
-    <div class="day">18</div>
-    <div class="day">19</div>
-    <div class="day">20</div>
-    <div class="day">21</div>
-    <div class="day">22</div>
-    <div class="day">23</div>
-    <div class="day">24</div>
-    <div class="day">25</div>
-    <div class="day">26</div>
-    <div class="day">27</div>
-    <div class="day">28</div>
-    <div class="day">29</div>
-    <div class="day">30</div>
-    <div class="day">x</div>
-    <div class="day">x</div>
-    <div class="day">x</div>
-    <div class="day">x</div>
-    <div class="day">x</div> -->
 </div>
