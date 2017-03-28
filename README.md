@@ -1,24 +1,6 @@
-# README
+# K A L E N D A R I U M
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+An simple, elegant calendar with dynamically generated views.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Ruby 2.3.3p222
+* Tested on Chrome and Safari
