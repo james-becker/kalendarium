@@ -14,10 +14,6 @@
   </ul>
 </div>
 
-
-
-
-
 <div class="days">
   <div class="weekday">Mon</div>
   <div class="weekday">Tues</div>
@@ -27,31 +23,8 @@
   <div class="weekday">Sat</div>
   <div class="weekday">Sun</div>
 
-  <button id="btn-add-event" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-    Quick Add
-  </button>
+  <%= link_to "Add", new_event_path, class: "btn btn-primary", id: "btn-add-event" %>
 
-</div>
-
-<!-- Add Event Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h2 class="modal-title" id="exampleModalLabel">Quick Add</h2>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <%= render 'events/new' %>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Add to Calendar</button>
-      </div>
-    </div>
-  </div>
 </div>
 
 
