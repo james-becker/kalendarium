@@ -1,13 +1,10 @@
 <%= simple_form_for Event.new do |f| %>
-<div class="form-input">
-  <div class="input-group">
+    <h1>This is header</h1>
     <%= f.input :name %>
     <%= f.input :description %>
     <%= f.input :start_time %>
     <%= f.input :end_time %>
     <%= f.hidden_field :calendar_id, value: 1 %>
-  </div>
-</div>
 
   <%= f.button :submit %>
 <% end %>
