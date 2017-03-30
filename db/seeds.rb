@@ -1,31 +1,14 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
-user0 = User.create(name: "James")
-
-calendar0 = Calendar.create(
-  user_id: user0.id,
-  name: "Appointments",
-  description: "Upcoming events related to school and work"
-  )
-
-event0 = Event.create(
-  calendar_id: calendar0.id,
-  name: "Dinner with Ian",
-  description: "Meet Ian at Qdoba on 6th avenue. Will talk development.",
-  start_time: DateTime.strptime("01/04/2017 18:00", "%d/%m/%Y %H:%M"),
-  end_time: DateTime.strptime("01/04/2017 19:00", "%d/%m/%Y %H:%M")
-  )
-
-event1 = Event.create(
-  calendar_id: calendar0.id,
-  name: "Dinner with Amanda",
-  description: "Meet Amanda at Qdoba on 6th avenue. Will talk development.",
-  start_time: DateTime.strptime("29/03/2017 18:00", "%d/%m/%Y %H:%M"),
-  end_time: DateTime.strptime("29/03/2017 19:00", "%d/%m/%Y %H:%M")
-  )
+Calendar.create!([
+  {name: "Appointments", description: "Upcoming events related to school and work", user_id: 1}
+])
+Event.create!([
+  {start_time: "2017-04-01 18:00:00", end_time: "2017-04-01 19:00:00", calendar_id: 1, name: "Dinner with Ian", description: "Meet Ian at Qdoba on 6th avenue. Will talk development."},
+  {start_time: "2017-03-31 02:19:00", end_time: "2017-03-31 02:19:00", calendar_id: 1, name: "Lunch with Jim", description: "At the firehouse. Free beer with lunch!"},
+  {start_time: "2017-03-22 18:21:00", end_time: "2017-03-22 20:21:00", calendar_id: 1, name: "Movie with Jessica", description: "We're gonna have a blast!"},
+  {start_time: "2017-03-29 18:00:00", end_time: "2017-03-29 19:00:00", calendar_id: 1, name: "Dinner with Mollie", description: "Meet at Kimono Sushi on 10th avenue."},
+  {start_time: "2017-03-19 19:00:00", end_time: "2017-03-19 20:00:00", calendar_id: 1, name: "Le Wagon presentation", description: "Presenting with Juliette"},
+  {start_time: "2017-03-30 23:00:00", end_time: "2017-03-30 23:00:00", calendar_id: 1, name: "TalenQuest for Quipu due", description: ""}
+])
+User.create!([
+  {name: "James"}
+])
