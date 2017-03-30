@@ -5,5 +5,7 @@
     <%= f.input :end_time %>
     <%= f.hidden_field :calendar_id, value: 1 %>
 
-  <%= f.button :submit, class: "btn btn-primary" %>
+  <button type="submit" class="btn btn-primary btn-round">
+    <%= fa_icon('check') %>
+  </button>
 <% end %>

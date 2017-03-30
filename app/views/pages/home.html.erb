@@ -2,5 +2,7 @@
 <div class="home-centered">
   <h1>K A L E N D A R I U M</h1>
 
-  <%= link_to "View Calendar", calendar_path, class: "btn btn-primary" %>
+  <%= link_to calendar_path, class: "btn btn-primary btn-round" do %>
+    <%= fa_icon('eye') %>
+    <% end %>
 </div>
