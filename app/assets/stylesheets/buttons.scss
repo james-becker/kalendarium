@@ -15,7 +15,16 @@
   top: -70px;
   border-radius: 50%;
   font-size: 36px;
-  border: 1px solid #333;
   color: #fcfcfc;
-  background-color: #336699;
+  background-color: #c9302c;
+}
+
+.btn-round {
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  padding: 0px;
+  i {
+    line-height: 40px;
+  }
 }

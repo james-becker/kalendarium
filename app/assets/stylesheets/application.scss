@@ -1,6 +1,7 @@
 // @import "bootstrap-sprockets";
 @import "bootstrap/bootstrap";
 // @import "bootstrap.min";
+
 @import "calendars";
 @import "events";
 @import "pages";
@@ -11,3 +12,4 @@
 @import "modals";
 @import "font-awesome";
 @import "bootstrap-overrides";
+@import "color_variables";

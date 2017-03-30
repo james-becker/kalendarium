@@ -1,9 +1,9 @@
 <div class="month">
   <ul>
-    <%= link_to calendar_path(@basis - 1.month) do %>
+    <%= link_to calendar_path(basis: @basis - 1.month) do %>
       <li class="prev">&#10094;</li>
     <% end %>
-    <%= link_to calendar_path(@basis + 1.month) do %>
+    <%= link_to calendar_path(basis: @basis + 1.month) do %>
       <li class="next">&#10095;</li>
     <% end %>
     <li>
@@ -23,9 +23,7 @@
   <div class="weekday">Sat</div>
   <div class="weekday">Sun</div>
 
-  <button id="btn-add-event" type="button" class="btn-add-event" data-toggle="modal" data-target="#addEventModal">
-    +
-  </button>
+  <button id="btn-add-event" type="button" class="btn btn-add-event" data-toggle="modal" data-target="#addEventModal">+</button>
 
 </div>
 
@@ -40,7 +38,7 @@
         <%= render 'events/new' %>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-secondary btn-round" data-dismiss="modal">✕</button>
       </div>
     </div>
   </div>
@@ -95,10 +93,12 @@
                       <%= render 'events/show', event: event %>
                     </div>
                     <div class="modal-footer">
-                      <a data-toggle="modal" data-target="#<%= event.id %>EditModal" class="btn btn-warning">Edit</a>
-                      <%= link_to 'Delete', event_path(event), class: "btn btn-danger",
-            data: {:confirm => 'Are you sure you want to delete this event?'}, :method => :delete %>
-                      <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+                      <a data-toggle="modal" data-target="#<%= event.id %>EditModal" class="btn btn-warning btn-round"><%= fa_icon "pencil" %></a>
+                      <%= link_to event_path(event), class: "btn btn-danger btn-round",
+            data: {:confirm => 'Are you sure you want to delete this event?'}, :method => :delete  do %>
+                        <%= fa_icon "trash-o" %>
+                      <% end %>
+                      <button type="button" class="btn btn-secondary btn-round" data-dismiss="modal">✕</button>
                     </div>
                   </div>
                 </div>
@@ -115,7 +115,7 @@
                       <%= render 'events/edit', event: event %>
                     </div>
                     <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                      <button type="button" class="btn btn-secondary btn-round" data-dismiss="modal">✕</button>
                     </div>
                   </div>
                 </div>
