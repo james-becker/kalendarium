@@ -8,7 +8,7 @@ body {font-family: Verdana, sans-serif;}
 /* Month header */
 .month {
     padding: 10px 25px;
-    background: #4477aa;
+    background: #fcfcfc;
 }
 
 /* Month list */
@@ -18,7 +18,7 @@ body {font-family: Verdana, sans-serif;}
 }
 
 .month ul li {
-    color: white;
+    color: #333;
     font-size: 20px;
     letter-spacing: 3px;
 }
@@ -88,6 +88,7 @@ body {font-family: Verdana, sans-serif;}
 
 .empty-day:hover {
   cursor: default;
+  background-color: #ccccdd;
 }
 
 .day-date {
@@ -115,7 +116,7 @@ body {font-family: Verdana, sans-serif;}
     flex-wrap: wrap;
     flex-flow: row-wrap;
     padding: 0 0;
-    background: #dde;
+    background: #fff;
     margin: 0;
     justify-content: center;
 }

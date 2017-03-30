@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_action :set_event, only: [:show, :update, :destroy]
+  before_action :set_event, only: [:show, :edit, :update, :destroy]
 
   def index
     @events = Event.all
@@ -19,7 +19,26 @@ class EventsController < ApplicationController
     end
   end
 
-  def show
+  def show(event) # Do we need (event) parameter?
+    render locals: {
+      event: event
+    }
+  end
+
+  def edit
+  end
+
+  def update
+    if @event.update(event_params)
+      redirect_to calendar_path, notice: 'Event was successfully saved.'
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    @event.destroy
+    redirect_to calendar_path
   end
 
   private
