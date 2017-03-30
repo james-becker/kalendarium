@@ -1,3 +1,6 @@
+<div class="container">
+  <div class="wrapper">
+    <div class="col-xs-12">
 <%= simple_form_for Event.new do |f| %>
     <%= f.input :name, input_html: { style: 'width: 80%; margin: 0px 30px' } %>
     <%= f.input :description, input_html: { style: 'width: 80%; margin: 0px 30px' } %>
@@ -9,3 +12,6 @@
     <%= fa_icon('check') %>
   </button>
 <% end %>
+    </div>
+  </div>
+</div>
