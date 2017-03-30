@@ -1,8 +1,8 @@
 <%= simple_form_for event do |f| %>
     <%= f.input :name, input_html: { value: (params[:name] || event.name), style: 'width: 80%; margin: 0px 30px' } %>
     <%= f.input :description, input_html: { value: (params[:description] || event.description), style: 'width: 80%; margin: 0px 30px' } %>
-    <%= f.input :start_time, input_html: { value: (params[:start_time] || event.start_time) } %>
-    <%= f.input :end_time, input_html: { value: (params[:end_time] || event.end_time) } %>
+    <%= f.input :start_time, :as => :datetime_picker, input_html: { value: (params[:start_time] || event.start_time), style: 'width: 80%; margin: 0px 30px' } %>
+    <%= f.input :end_time, :as => :datetime_picker, input_html: { value: (params[:end_time] || event.end_time), style: 'width: 80%; margin: 0px 30px' } %>
     <%= f.hidden_field :calendar_id, value: 1 %>
     <button type="submit" class="btn btn-primary btn-round">
       <%= fa_icon('check') %>

@@ -69,7 +69,8 @@ body {font-family: Verdana, sans-serif;}
 
   position: relative;
   flex: 0 1 12%;
-  height: 100px;
+  min-height: 80px;
+  height: 12vh;
   width: 12%;
   text-align: left;
   font-size:12px;
