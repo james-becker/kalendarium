@@ -2,6 +2,16 @@ body {
   font-family: 'Roboto Condensed', sans-serif;
 }
 
-h1 {
-  font-size: 52px;
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+}
+
+a {
+  color: #83527c;
+}
+
+a:hover,
+a:focus {
+  color: #83527c;
+  text-decoration: underline;
 }

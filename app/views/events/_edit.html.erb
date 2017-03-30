@@ -1,9 +1,8 @@
-<%= simple_form_for Event.new do |f| %>
+<%= simple_form_for event do |f| %>
     <%= f.input :name, value: params[:name], input_html: { value: params[:name] || event.name, maxlength: 20, style: 'width: 200px', class: "form-inline" } %>
     <%= f.input :description, value: params[:description], input_html: { value: params[:description] || event.description, maxlength: 20, style: 'width: 200px' } %>
     <%= f.input :start_time, input_html: { value: params[:start_time] || event.start_time} %>
     <%= f.input :end_time, input_html: { value: params[:end_time] || event.end_time } %>
     <%= f.hidden_field :calendar_id, value: 1 %>
-
-  <%= f.button :submit %>
+  <%= f.button :submit, "Save", class: 'btn btn-primary' %>
 <% end %>

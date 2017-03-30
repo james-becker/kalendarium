@@ -3,8 +3,8 @@ require 'time'
 
 class CalendarsController < ApplicationController
 
-  def show(basis=Date.new(Date.today.year, Date.today.month, 1))
-    @basis = basis
+  def show
+    @basis = params[:basis] || Date.new(Date.today.year, Date.today.month, 1)
     @first_wday = @basis.wday
     @prior_days = @first_wday - 1
     @days_in_month = days_in_month(@basis.month, @basis.year)

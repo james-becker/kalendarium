@@ -38,9 +38,10 @@ body {font-family: Verdana, sans-serif;}
 /* Weekdays (Mon-Sun) */
 .weekday {
 
-  background-color: #dde;
+  background-color: #444;
   list-style-type: none;
   display: inline-block;
+  color: #fcfcfc;
 
   position: relative;
 
@@ -51,14 +52,14 @@ body {font-family: Verdana, sans-serif;}
   padding: 5px;
 
   margin: 0px;
-  border-bottom: solid 2px #336699;
-  border-right: solid 1px white;
+  border-bottom: solid 5px white;
+  border-right: solid 1px #aaa;
 }
 
 /* Days (1-31) */
 
 .day {
-  background: #eeeef7;
+  background: #f7eeee;
   list-style-type: none;
   display: inline-block;
 
@@ -78,17 +79,17 @@ body {font-family: Verdana, sans-serif;}
 }
 
 .day:hover {
-  background-color: #f3f3ff;
+  background-color: #fcf2f2;
   cursor: pointer;
 }
 
 .empty-day {
- background:#ccccdd;
+ background:#ddcccc;
 }
 
 .empty-day:hover {
   cursor: default;
-  background-color: #ccccdd;
+  background-color: #ddcccc;
 }
 
 .day-date {
@@ -103,6 +104,7 @@ body {font-family: Verdana, sans-serif;}
   padding: 5px;
   border-radius: 50%;
   background-color: #fff;
+  font-style: italic;
 }
 
 .day-events {
@@ -127,7 +129,7 @@ body {font-family: Verdana, sans-serif;}
 
 /* Highlight the "current" day */
 .active {
-    background: #1abc9c;
+    background: #f41212;
     color: white !important
 }
 
