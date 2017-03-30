@@ -1,7 +1,7 @@
 // @import "bootstrap-sprockets";
 @import "bootstrap/bootstrap";
 // @import "bootstrap.min";
-
+@import "jquery-ui";
 @import "calendars";
 @import "events";
 @import "pages";
@@ -13,3 +13,5 @@
 @import "font-awesome";
 @import "bootstrap-overrides";
 @import "color_variables";
+
+@import "bootstrap-datepicker3"

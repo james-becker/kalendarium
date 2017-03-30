@@ -1,11 +1,17 @@
+<div class="container">
+  <div class="wrapper">
+    <div class="col-xs-12">
 <%= simple_form_for Event.new do |f| %>
     <%= f.input :name, input_html: { style: 'width: 80%; margin: 0px 30px' } %>
     <%= f.input :description, input_html: { style: 'width: 80%; margin: 0px 30px' } %>
-    <%= f.input :start_time %>
-    <%= f.input :end_time %>
+    <%= f.input :start_time, as: string, input_html: { data: { behaviour: "datepicker" } } %>
+    <%= f.input :end_time, as: string, input_html: { data: { behaviour: "datepicker" } } %>
     <%= f.hidden_field :calendar_id, value: 1 %>
 
   <button type="submit" class="btn btn-primary btn-round">
     <%= fa_icon('check') %>
   </button>
 <% end %>
+    </div>
+  </div>
+</div>
