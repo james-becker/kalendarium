@@ -59,7 +59,7 @@
 
     <% date_obj = DateTime.new(@basis.year, @basis.month, date) %>
 
-
+    <!-- Render the Day calendar view -->
     <div class="day">
 
       <% if date_obj == Date.today %>
@@ -82,7 +82,16 @@
               </a>
               <br>
 
-              <!-- Show Event Modal -->
+          <% end %>
+        <% end %>
+      </div>
+
+    </div>
+
+      <!-- Then, for each of those events, render a modal OUTSIDE of the day div -->
+      <% if Event.where('start_time BETWEEN ? AND ?', date_obj.beginning_of_day, date_obj.end_of_day).any? %>
+          <% Event.where('start_time BETWEEN ? AND ?', date_obj.beginning_of_day, date_obj.end_of_day).each do |event| %>
+
               <div class="modal fade" id="<%= event.id %>ShowModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                   <div class="modal-content">
@@ -123,9 +132,8 @@
 
           <% end %>
         <% end %>
-      </div>
 
-    </div>
+
 
     <% date += 1 %>
   <% end %>
