@@ -49,7 +49,7 @@
 
   <!-- Pad unused days before first of month -->
   <% @prior_days.times do |day| %>
-    <div class="day empty-day">
+    <div class="kday empty-day">
     </div>
   <% end %>
 
@@ -60,7 +60,7 @@
     <% date_obj = DateTime.new(@basis.year, @basis.month, date) %>
 
     <!-- Render the Day calendar view -->
-    <div class="day">
+    <div class="kday">
 
       <% if date_obj == Date.today %>
         <div class="day-date active">
@@ -140,7 +140,7 @@
 
   <!-- Pad unused days after last of month -->
   <% @following_days.times do |day| %>
-    <div class="day empty-day">
+    <div class="kday empty-day">
     </div>
   <% end %>
 
